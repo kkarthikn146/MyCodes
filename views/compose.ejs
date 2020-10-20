@@ -1,0 +1,43 @@
+<%- include("partials/header") -%>
+
+<h3>ADD A NEW NOTE</h3>
+
+<form action="/compose" method="POST">
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Note title</label>
+        <input onfocusout="PopulateDropDownList()" type="text" name="postTitle" class="form-control" id="">
+
+    </div>
+  
+    
+    <script type="text/javascript">
+
+    //     function PopulateDropDownList() {
+    //         var select = document.getElementById("selectNumber");
+    //         var options = sectionList.SectionName;
+    //         for (var i = 0; i < options.length; i++) {
+    //             var opt = options[i];
+    //             var el = document.createElement("option");
+    //             el.textContent = opt;
+    //             el.value = opt;
+    //             select.appendChild(el);
+    //         }
+    //     }
+
+    // </script>
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Note content</label>
+        <textarea name="postBody" id="" class="form-control" cols="30" rows="10"></textarea>
+
+    </div>
+
+    <input type="hidden" name="secName" value="<%=whichSection%>" ></input>
+
+    <button type="submit" class="btn btn-primary " style="background-color: rgb(99,209,187);">Add note</button>
+
+</form>
+
+<%- include("partials/footer") -%>
+

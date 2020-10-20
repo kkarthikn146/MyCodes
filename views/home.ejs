@@ -1,0 +1,37 @@
+<%- include("partials/header") -%>
+
+<h4>HOME<span><a href="/allSectionList"><button type="submit" class="btn  btn-primary"
+                style="float: right;margin-left: 10px;background-color: rgb(99,209,187);">Add a Notes</button></a><a href="/newSection"><button
+                type="submit" class="btn  btn-primary" style="float: right;margin-left: 10px;background-color: rgb(99,209,187);">Add a new
+                section</button></a></span></h4>
+<br>
+<p style="padding-left: 55px;"> <%= content%> </p>
+
+
+
+<h4>ALL SECTIONS</h4>
+<div class="row makeCenter d-flex">
+<% sectionAll.forEach(function(sec) { %>
+    <a  href="/customOnly/<%=sec.SectionName%>" > <div class="btn allSections col-sm-3" > <%= sec.SectionName%> </div> </a>
+<%})%>
+</div>
+
+<h4>ALL NOTES</h4>
+
+<div class="row makeCenter">
+   
+    <% composed.forEach(function(note) { %>
+
+    <% var len =100 ; var smallStr = note.Content.substring(0,len); smallStr = smallStr + " ..." %>
+    <div class="col-md-3 onlySection">
+    <h1 > <%= note.Title%> </h1>
+    <p> <%= smallStr%> <a style="color:#63d1bb" href="/posts/<%=  note.Title %> ">Read More</a> </p>
+</div>
+    <%})%>
+
+</div>
+
+
+
+
+<%- include("partials/footer") -%>

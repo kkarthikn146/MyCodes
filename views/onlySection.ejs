@@ -1,0 +1,18 @@
+<%- include("partials/header") -%>
+
+
+<div class="row makeCenter">
+   
+        <% sectionNotes.forEach(function(note) { %>
+
+        <% var len =100 ; var smallStr = note.Content.substring(0,len); smallStr = smallStr + " ..." %>
+        <div class="col-md-3 onlySection">
+        <h1 style="color: #777"> <%= note.Title%> </h1>
+        <p style="text-indent: 10px;"> <%= smallStr%> <a href="/posts/<%=  note.Title %> " style="color:#63d1bb">Read More</a> </p>
+    </div>
+        <%})%>
+    
+</div>
+
+
+<%- include("partials/footer") -%>

@@ -1,0 +1,17 @@
+<%- include("partials/header") -%>
+
+
+<a href="/newSection"><button
+    type="submit" class="btn  btn-primary" style="float: right;margin-left: 10px;background-color: rgb(99,209,187);">Add a new
+    section</button></a>
+
+<div class="row makeCenter d-flex">
+    <% sectionAll.forEach(function(sec) { %>
+    <a href="/custom/<%=sec.SectionName%>">
+        <div class="allSections col-sm-3"> <%= sec.SectionName%> </div>
+    </a>
+    <%})%>
+</div>
+
+
+<%- include("partials/footer") -%>
